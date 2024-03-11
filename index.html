@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IMDB Clone</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/9eabe5e04e.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="main-container">
+        <div class="logo-container">
+            <img src="assets/imdb-logo.png" alt="">
+        </div>
+        <div class="sectionals">
+            <div class="search-movies">
+                <h2 class="title">Explore</h2>
+                <!-- search element with search button -->
+                <div class="search-element">
+                    <input type="search" name="search-input" id="search-input"
+                        placeholder="Find movies, TV shows, Celebrities and more..." onkeyup="getSearchResults(this)">
+                    <button id="search-btn" onclick="getSearchResults(this)"><i
+                            class="fa-solid fa-magnifying-glass"></i></button>
+                </div>
+
+                <!-- div to display movie banners of the search -->
+                <div id="display-section"></div>
+            </div>
+
+            <!-- div to display list of favourite movies -->
+            <div class="favourites">
+                <h2 class="title">Favourites</h2>
+                <div id="fav-list"></div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
