@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IMDB Clone</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/9eabe5e04e.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="main-container">
+        <div class="logo-container">
+            <img src="assets/imdb-logo.png" alt="">
+        </div>
+        <div class="sectionals">
+            <div class="search-movies">
+                <h2 class="title">Explore</h2>
+                <div class="search-element">
+                    <input type="search" name="search-input" id="search-input"
+                        placeholder="Find movies, TV shows, Celebrities and more..." onkeyup="getSearchResults(this)">
+                    <button id="search-btn" onclick="getSearchResults(this)"><i
+                            class="fa-solid fa-magnifying-glass"></i></button>
+                </div>
+
+                <div id="display-section"></div>
+            </div>
+            <div class="favourites">
+                <h2 class="title">Favourites</h2>
+                <div id="fav-list"></div>
+                <!-- <div class="fav-item">
+                    <div class="poster-element">
+                        <img src="" alt="">
+                    </div>
+                    <div class="movie-details">
+                        <div class="title-section">
+                            <p class="title">title</p>
+                            <i id="remove-fav" class="fa-solid fa-heart-circle-minus"></i>
+                        </div>
+                        <p class="year">year</p>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

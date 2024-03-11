@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Details</title>
+    <link rel="stylesheet" href="movie-details.css">
+    <script src="https://kit.fontawesome.com/9eabe5e04e.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="inner">
+        <div class="page-header">
+            <div class="logo-container">
+                <img src="assets/imdb-logo.png" alt="">
+            </div>
+
+            <a href="index.html"><button class="home-btn"><i class="fa-solid fa-chevron-left"></i>
+                <span>Home</span></button></a>
+        </div>
+
+        <div class="movie-details-container">
+            <div class="movie-header">
+                <div class="title">
+                    <h1 class="movie-title"></h1>
+                    <span class="year"></span>
+                    <span class="running-time"></span>
+                </div>
+                <div class="rating">
+                    <p>Rating</p>
+                    <i class="fa-solid fa-star"></i><span id="rating"></span>
+                </div>
+            </div>
+
+            <div class="details">
+                <div class="poster">
+                    <img id="movie-poster" src="" alt="">
+                </div>
+                <div class="movie-details">
+                    <div id="genre"></div>
+                    <div class="plot mt-20">
+                        <div>Plot</div>
+                        <span id="plot"></span>
+                    </div>
+                    <div class="directors mt-20">
+                        <div class="sub-title">Directors</div>
+                        <span class="sub-text" id="directors"></span>
+                    </div>
+                    <div class="cast mt-20">
+                        <div class="sub-title">Cast</div>
+                        <span class="sub-text" id="cast"></span>
+                    </div>
+                    <!-- <div class="genre mt-20">
+                        <span class="sub-title">Genre</span>
+                        <span class="sub-text" id="genre"></span>
+                    </div> -->
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <script src="movie-details.js"></script>
+</body>
+
+</html>
