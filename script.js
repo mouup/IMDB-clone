@@ -5,10 +5,10 @@ const movieDisplay = document.getElementById('display-section');
 const favIcon = document.getElementById('fav-icon');
 const favList = document.getElementById('fav-list');
 
-
-
+// to load favourites on page refresh
 window.addEventListener('load', moveToFavourites);
 
+// search api call with param queryTerm
 async function fetchAPISearchResults(queryTerm) {
     let searchResults;
     const apiURL = `https://www.omdbapi.com/?s=${queryTerm}&page=1&apikey=${apiKey}`;
@@ -21,6 +21,7 @@ async function fetchAPISearchResults(queryTerm) {
     }
 }
 
+// function call on keyup and on click to call search API
 function getSearchResults() {
     const queryTerm = searchBox.value;
 
@@ -33,10 +34,13 @@ function getSearchResults() {
 
 }
 
+
+/* function to create movie banner */
 function displayMovieTiles(searchResults) {
     movieDisplay.innerHTML = '';
     searchResults.forEach(element => {
 
+        // movie card element with favourite button click event
         const movieCard = document.createElement('div');
         movieCard.innerHTML = `<div class="movie-card">
         <a href="movie-details.html" >
@@ -46,13 +50,14 @@ function displayMovieTiles(searchResults) {
         <span>${element.Title}</span><i id="fav-icon" onclick="storeFavourites(this)" class="fa-solid fa-heart-circle-plus" aria-hidden="true"></i>
         </div>
         </div>`;
-        // movieCard.href = 'movie-details.html';
 
         movieDisplay.appendChild(movieCard);
     });
 
 }
 
+// function call on click of the favourite button
+// localStorage of favourite movies in an array
 async function storeFavourites(title) {
     let movieDetails;
     const movieTitle = title.previousSibling.textContent;
@@ -86,12 +91,10 @@ async function storeFavourites(title) {
 
     }
 
-    // console.log(Array.from(JSON.parse(localStorage.getItem('favourites'))));
-
     moveToFavourites();
 }
 
-
+// function to create div element displaying favourite movies
 async function moveToFavourites() {
     favList.innerHTML = '';
     const favourites = JSON.parse(localStorage.getItem('favourites'));
@@ -103,6 +106,7 @@ async function moveToFavourites() {
         let poster = movieDetails.Poster != 'N/A' ? movieDetails.Poster : 'assets/img-not-found.png';
         const favItem = document.createElement('div');
 
+        // favourite movie element with remove from fav button 
         favItem.innerHTML = `<div class="fav-item">
             <div class="poster-element">
                 <img src="${poster}" alt="">
@@ -120,6 +124,7 @@ async function moveToFavourites() {
     })
 }
 
+// function to remove record from fav section and localstorage
 function removeFromFavourites(fav) {
     console.log(fav);
     const favTitle = fav.previousElementSibling.textContent;
@@ -133,10 +138,11 @@ function removeFromFavourites(fav) {
 
 }
 
+// click event on the document to open the movie detail page on click  of movie banner
 document.addEventListener('click', function (event) {
     console.log(event);
-    if(event.target.classList.contains('movie-poster')) {
+    if (event.target.classList.contains('movie-poster')) {
         let movieTitle = event.target.parentElement.nextElementSibling.children[0].textContent;
         localStorage.setItem('movieTitle', movieTitle);
-    }   
+    }
 })

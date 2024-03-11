@@ -12,7 +12,7 @@ const genre = document.querySelector("#genre");
 
 fetchAPIMovieDetails(movieTitle);
 
-
+// api call to get movie details with title as parameter
 async function fetchAPIMovieDetails(t) {
     const apiURL = `https://www.omdbapi.com/?t=${t}&page=1&apikey=${apiKey}`;
 
