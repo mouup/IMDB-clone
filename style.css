@@ -10,6 +10,8 @@ body {
     border-radius: 5px;
     overflow: auto;
     padding: 25px;
+    height: 100vh;
+    max-height: 100%;
 }
 
 .logo-container {
